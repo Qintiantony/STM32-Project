@@ -1,33 +1,30 @@
-#include "stm32f10x.h"
-#define LED_PORT GPIOC
-#define LED_PIN (GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7)
-#define LED_PORT_RCC RCC_APB2Periph_GPIOC
-
-void LED_Init(){
-	GPIO_InitTypeDef(GPIO_InitStructure);
-	RCC_APB2PeriphClockCmd(LED_PORT_RCC,ENABLE);
-	GPIO_InitStructure.GPIO_Pin=LED_PIN; 
-	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP; //????????
-	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz; //??????
-	GPIO_Init(LED_PORT,&GPIO_InitStructure); /* ??? GPIO */
-	GPIO_SetBits(LED_PORT,LED_PIN); //? LED ????,???? LED
-}
-
-void delay_ms(u16 time){
-	u16 i=0;
-	while(time--)
-	{
-		i=10000;
-		while(i--);
-	}
-}
+#include "system.h"
+#include "led.h"
+#include "beep.h"
+#include "SysTick.h"
+#include "key.h"
+#include "exti.h"
+#include "time.h"
+#include "pwm.h"
+#include "usart.h"
+#include "tftlcd.h"
+#include "dht11.h"
 
 int main(void){
-	u16 GPIO_Pin_lit=GPIO_Pin_0;
-	u16 counter=0;
+	u8 key=0;
+	u8 fx=0;
+	u16 i=0;
+SysTick_Init(72);
+NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 LED_Init();
-	while(1){
-		GPIO_ResetBits(LED_PORT,GPIO_Pin_lit);
+BEEP_Init();
+KEY_Init();
+KEY_EXTI_Init();
+TIM4_Init(1000,36000-1); //2Hz
+TIM3_CH1_PWM_Init(500,72-1); //2kHz
+USART1_Init(9600);
+TFTLCD_Init();
+		/*GPIO_ResetBits(LED_PORT,GPIO_Pin_lit);
 		delay_ms(100);
 		GPIO_SetBits(LED_PORT,GPIO_Pin_lit);
 		GPIO_Pin_lit=GPIO_Pin_lit<<1;
@@ -36,6 +33,30 @@ LED_Init();
 			GPIO_Pin_lit=GPIO_Pin_0;
 			counter=0;
 		}
-		
+		*/
+		//beep=!beep;
+		//delay_ms(10);
+//LCD_ShowString(10,10,tftlcd_data.width,tftlcd_data.height,16,"Hello World!");
+//LCD_ShowString(10,30,tftlcd_data.width,tftlcd_data.height,16,"Read Data");
+	while(1)
+	{
+		u8 buffer[5];
+		double hum=0;
+		double temp=0;
+		unsigned char string_out[20];
+		if(DHT11_ReadData(buffer)==1)
+		{
+			hum=buffer[0]+buffer[1]/10.0;
+			temp=buffer[2]+buffer[3]/10.0;
+			printf("Humidity=%lf %%RH\r\n", hum);
+			printf("Temperature=%lf C\r\n",temp);
+			sprintf(string_out,"Humidity=%lf %%RH\r\n", hum);
+			printf(string_out);
+			LCD_ShowString(10,10,tftlcd_data.width,tftlcd_data.height,16,string_out);
+			sprintf(string_out,"Temperature=%lf C\r\n",temp);
+			printf(string_out);
+			LCD_ShowString(10,30,tftlcd_data.width,tftlcd_data.height,16,string_out);
+		}
+		delay_ms(1000);
 	}
 }
