@@ -28,6 +28,7 @@ void USART1_Init(u32 bound)
 	USART_InitStructure.USART_StopBits=USART_StopBits_1;
 	USART_InitStructure.USART_Parity=USART_Parity_No; //No parity
 	USART_InitStructure.USART_Mode=USART_Mode_Rx|USART_Mode_Tx;
+	USART_InitStructure.USART_HardwareFlowControl =USART_HardwareFlowControl_None;
 	USART_Init(USART1,&USART_InitStructure);
 	USART_Cmd(USART1,ENABLE);
 	
@@ -37,8 +38,8 @@ void USART1_Init(u32 bound)
 	
 	//USART Interrupt
 	NVIC_InitStructure.NVIC_IRQChannel=USART1_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority=3;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority=0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
 }
@@ -46,18 +47,24 @@ void USART1_Init(u32 bound)
 void USART1_IRQHandler(void)
 {
 	u8 r;
+	if (USART_GetFlagStatus(USART1, USART_FLAG_ORE) != RESET)  
+   {  
+		 USART_ReceiveData(USART1);  
+     USART_ClearFlag(USART1, USART_FLAG_ORE);  
+   } 
 	if(USART_GetITStatus(USART1,USART_IT_RXNE) != RESET)
 	{
-		r=USART_ReceiveData(USART1);
-		USART_SendData(USART1,r);
-		while(USART_GetFlagStatus(USART1,USART_FLAG_TC) != SET);
+		USART_ClearFlag(USART1, USART_FLAG_RXNE);  
+    USART_ClearITPendingBit(USART1, USART_IT_RXNE);  
+    r = USART_ReceiveData(USART1); 
 	}
-	USART_ClearFlag(USART1,USART_FLAG_TC);
+	//USART_ClearFlag(USART1,USART_FLAG_TC);
 }
 
 int fputc(int ch,FILE *p)
 {
 	USART_SendData(USART1,(u8)ch);
 	while(USART_GetFlagStatus(USART1,USART_FLAG_TXE)==RESET);
+	//while( USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET );
 	return ch;
 }

@@ -15,8 +15,8 @@
 //Define input by bit
 #define KEY_UP_Read PAin(0)
 #define KEY_DOWN_Read PEin(3)
-#define KEY_LEFT_Read PEin(2)
-#define KEY_RIGHT_Read PEin(4)
+#define KEY_LEFT_Read PEin(4)
+#define KEY_RIGHT_Read PEin(2)
 
 //Define key value
 #define KEY_UP 1

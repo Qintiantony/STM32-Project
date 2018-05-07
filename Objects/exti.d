@@ -20,3 +20,5 @@
 .\objects\exti.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\exti.o: .\User\beep\beep.h
 .\objects\exti.o: .\User\key\key.h
+.\objects\exti.o: .\User\motor\motor.h
+.\objects\exti.o: .\User\PWM\pwm.h

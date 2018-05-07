@@ -22,9 +22,10 @@
 .\objects\main.o: .\User\systick\SysTick.h
 .\objects\main.o: .\User\key\key.h
 .\objects\main.o: .\User\exti\exti.h
-.\objects\main.o: .\User\time\time.h
 .\objects\main.o: .\User\PWM\pwm.h
 .\objects\main.o: .\User\usart\usart.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\User\LCD\tftlcd.h
 .\objects\main.o: .\User\dht11\dht11.h
+.\objects\main.o: .\User\motor\motor.h
+.\objects\main.o: .\User\IRControl\hwjs.h

@@ -493,7 +493,7 @@ void TFTLCD_Init(void)
 		
 #endif 	
 	
- 	printf(" LCD ID:%x\r\n",tftlcd_data.id); //¥Ú”°LCD ID
+ 	//printf(" LCD ID:%x\r\n",tftlcd_data.id); //¥Ú”°LCD ID
 	
 #ifdef TFTLCD_HX8357D	
 	LCD_WriteCmd(0xE9); 

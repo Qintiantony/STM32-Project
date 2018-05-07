@@ -320,7 +320,7 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>2</wLevel>
+            <wLevel>1</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\User\led;.\User\beep;.\User\system;.\User\systick;.\User\key;.\User\exti;.\User\time;.\User\PWM;.\User\usart;.\User\LCD;.\User\dht11</IncludePath>
+              <IncludePath>.\User\led;.\User\beep;.\User\system;.\User\systick;.\User\key;.\User\exti;.\User\time;.\User\PWM;.\User\usart;.\User\LCD;.\User\dht11;.\User\motor;.\User\IRControl</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -440,6 +440,16 @@
               <FileName>dht11.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\dht11\dht11.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\motor\motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>hwjs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\IRControl\hwjs.c</FilePath>
             </File>
           </Files>
         </Group>
