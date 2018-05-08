@@ -3,4 +3,5 @@
 #include "system.h"
 void TIM3_CH1_PWM_Init(u16 per,u16 psc);
 void TIM4_CH1_PWM_Init(u16 per,u16 psc);
+void TIM4_CH1_PWM_State(u8 state);
 #endif

@@ -1,5 +1,8 @@
 #include "hwjs.h"
 #include "SysTick.h"
+#include "beep.h"
+#include "motor.h"
+#include "sht30.h"
 
 u32 hw_jsm;	  //定义一个32位数据变量，保存接收码
 u8  hw_jsbz;  //定义一个8位数据的变量，用于指示接收标志
@@ -116,6 +119,12 @@ void EXTI15_10_IRQHandler(void)	  //红外遥控外部中断
 					 hw_jsbz=0;
 					 hw_jsm=0;
 				 }
+				 if(hw_jsm==0x00FF7A85)
+				 {
+					 Current_Status=3;
+					 hw_jsbz=0;
+					 hw_jsm=0;
+				 }
 			 }
 			if(Current_Status==1)
 			 {
@@ -126,6 +135,33 @@ void EXTI15_10_IRQHandler(void)	  //红外遥控外部中断
 					 hw_jsm=0;
 				 }
 			 }
+			if(Current_Status==3)
+			{
+				if(hw_jsm==0x00FFC23D)
+				{
+					MOTOR_Run(500,0);
+					BEEP_On(100,1000,50);
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==0x00FF02FD)
+				{
+					MOTOR_Run(500,1);
+					BEEP_On(100,1000,50);
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==0x00FF6897)
+				{
+					 Current_Status=0;
+					 hw_jsbz=0;
+					 hw_jsm=0;
+				}
+			}
+			if(hw_jsm==0x00FF9867)
+			{
+				SHT30_Measure();
+			}
 	 }
 	 
 }

@@ -19,3 +19,8 @@
 .\objects\hwjs.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\hwjs.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\hwjs.o: .\User\systick\SysTick.h
+.\objects\hwjs.o: .\User\beep\beep.h
+.\objects\hwjs.o: .\User\motor\motor.h
+.\objects\hwjs.o: .\User\PWM\pwm.h
+.\objects\hwjs.o: .\User\sht30\sht30.h
+.\objects\hwjs.o: .\User\iic\iic.h

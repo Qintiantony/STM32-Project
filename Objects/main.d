@@ -29,3 +29,5 @@
 .\objects\main.o: .\User\dht11\dht11.h
 .\objects\main.o: .\User\motor\motor.h
 .\objects\main.o: .\User\IRControl\hwjs.h
+.\objects\main.o: .\User\iic\iic.h
+.\objects\main.o: .\User\sht30\sht30.h

@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\User\led;.\User\beep;.\User\system;.\User\systick;.\User\key;.\User\exti;.\User\time;.\User\PWM;.\User\usart;.\User\LCD;.\User\dht11;.\User\motor;.\User\IRControl</IncludePath>
+              <IncludePath>.\User\led;.\User\beep;.\User\system;.\User\systick;.\User\key;.\User\exti;.\User\time;.\User\PWM;.\User\usart;.\User\LCD;.\User\dht11;.\User\motor;.\User\IRControl;.\User\iic;.\User\sht30</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -450,6 +450,16 @@
               <FileName>hwjs.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\IRControl\hwjs.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\iic\iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>sht30.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\sht30\sht30.c</FilePath>
             </File>
           </Files>
         </Group>

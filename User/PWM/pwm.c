@@ -75,3 +75,15 @@ void TIM4_CH1_PWM_Init(u16 per, u16 psc)
 	TIM_ARRPreloadConfig(TIM4,ENABLE);
 	TIM_Cmd(TIM4,ENABLE);
 }
+
+void TIM4_CH1_PWM_State(u8 fan_state)
+{
+	if(fan_state==1)
+	{
+		TIM_Cmd(TIM4,ENABLE);
+	}
+	else if(fan_state==0)
+	{
+		TIM_Cmd(TIM4,DISABLE);
+	}
+}

@@ -13,6 +13,8 @@
 ".\objects\dht11.o"
 ".\objects\motor.o"
 ".\objects\hwjs.o"
+".\objects\iic.o"
+".\objects\sht30.o"
 ".\objects\misc.o"
 ".\objects\stm32f10x_exti.o"
 ".\objects\stm32f10x_fsmc.o"
