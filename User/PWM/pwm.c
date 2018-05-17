@@ -80,10 +80,15 @@ void TIM4_CH1_PWM_State(u8 fan_state)
 {
 	if(fan_state==1)
 	{
+		//TIM_ForcedOC1Config(TIM4, TIM_ForcedAction_InActive);
 		TIM_Cmd(TIM4,ENABLE);
+		
 	}
 	else if(fan_state==0)
 	{
+		TIM_GenerateEvent(TIM4,TIM_EventSource_Update);
 		TIM_Cmd(TIM4,DISABLE);
+		//TIM_ForcedOC1Config(TIM4, TIM_ForcedAction_Active);
+		//PDout(12)=1;
 	}
 }

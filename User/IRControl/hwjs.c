@@ -3,10 +3,15 @@
 #include "beep.h"
 #include "motor.h"
 #include "sht30.h"
+#include "dac.h"
+#include "adc.h"
+#include "laser.h"
 
 u32 hw_jsm;	  //定义一个32位数据变量，保存接收码
 u8  hw_jsbz;  //定义一个8位数据的变量，用于指示接收标志
+u16 dac_value=0;
 u8 Current_Status;
+u8 FiberLock_Status=0;
 
 
 /*******************************************************************************
@@ -113,22 +118,34 @@ void EXTI15_10_IRQHandler(void)	  //红外遥控外部中断
 	 {
 		 if(Current_Status==0)
 			 {
-				 if(hw_jsm==0x00FF30CF)
+				 if(hw_jsm==IR_Key_1)
 				 {
 					 Current_Status=1;
 					 hw_jsbz=0;
 					 hw_jsm=0;
 				 }
-				 if(hw_jsm==0x00FF7A85)
+				 if(hw_jsm==IR_Key_3)
 				 {
 					 Current_Status=3;
+					 hw_jsbz=0;
+					 hw_jsm=0;
+				 }
+				 if(hw_jsm==IR_Key_4)
+				 {
+					 Current_Status=4;
+					 hw_jsbz=0;
+					 hw_jsm=0;
+				 }
+				 if(hw_jsm==IR_Key_5)
+				 {
+					 Current_Status=5;
 					 hw_jsbz=0;
 					 hw_jsm=0;
 				 }
 			 }
 			if(Current_Status==1)
 			 {
-				 if(hw_jsm==0x00FF6897)
+				 if(hw_jsm==IR_Key_0)
 				 {
 					 Current_Status=0;
 					 hw_jsbz=0;
@@ -151,16 +168,71 @@ void EXTI15_10_IRQHandler(void)	  //红外遥控外部中断
 					hw_jsbz=0;
 					hw_jsm=0;
 				}
-				else if(hw_jsm==0x00FF6897)
+				else if(hw_jsm==IR_Key_0)
 				{
 					 Current_Status=0;
 					 hw_jsbz=0;
 					 hw_jsm=0;
 				}
 			}
-			if(hw_jsm==0x00FF9867)
+			if(Current_Status==4)
 			{
-				SHT30_Measure();
+				if(hw_jsm==IR_Key_1)
+				{
+					dac_value+=10;
+					DAC1_SetValue(dac_value);
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==IR_Key_2)
+				{
+					dac_value-=10;
+					DAC1_SetValue(dac_value);
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==IR_Key_3)
+				{
+					dac_value=1500;
+					DAC1_SetValue(dac_value);
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==IR_Key_RunStop)
+				{
+					FiberLock_Status=1;
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==IR_Key_EQ)
+				{
+					FiberLock_Status=0;
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==IR_Key_0)
+				{
+					 Current_Status=0;
+					 hw_jsbz=0;
+					 hw_jsm=0;
+				}
+			}
+			if(Current_Status==5)
+			{
+				if(hw_jsm==IR_Key_RunStop)
+				{
+					Laser_ScanWrite=1;
+					delay_ms(10);
+					Laser_ScanWrite=0;
+					hw_jsbz=0;
+					hw_jsm=0;
+				}
+				else if(hw_jsm==IR_Key_0)
+				{
+					 Current_Status=0;
+					 hw_jsbz=0;
+					 hw_jsm=0;
+				}
 			}
 	 }
 	 

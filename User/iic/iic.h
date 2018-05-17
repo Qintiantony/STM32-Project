@@ -10,18 +10,18 @@
 #define FALSE 0
   
 /*  IIC_SCL????????? */
-#define IIC_SCL_PORT 			GPIOF   
+#define IIC_SCL_PORT 			GPIOB   
 #define IIC_SCL_PIN 			(GPIO_Pin_10)
-#define IIC_SCL_PORT_RCC		RCC_APB2Periph_GPIOF
+#define IIC_SCL_PORT_RCC		RCC_APB2Periph_GPIOB
 
 /*  IIC_SDA????????? */
-#define IIC_SDA_PORT 			GPIOF  
+#define IIC_SDA_PORT 			GPIOB  
 #define IIC_SDA_PIN 			(GPIO_Pin_11)
-#define IIC_SDA_PORT_RCC		RCC_APB2Periph_GPIOF
+#define IIC_SDA_PORT_RCC		RCC_APB2Periph_GPIOB
 
-#define IIC_SCL    PFout(10) //SCL  
-#define IIC_SDA    PFout(11) //SDA      
-#define READ_SDA   PFin(11)  //??SDA  
+#define IIC_SCL    PBout(10) //SCL  
+#define IIC_SDA    PBout(11) //SDA      
+#define READ_SDA   PBin(11)  //??SDA  
 
 //IIC所有操作函数
 void IIC_Init(void);                //初始化IIC的IO口				 
