@@ -3639,9 +3639,9 @@
       </Doc>
       <Doc>
         <Name>.\User\usart\usart.c</Name>
-        <ColumnNumber>45</ColumnNumber>
+        <ColumnNumber>14</ColumnNumber>
         <TopLine>38</TopLine>
-        <CurrentLine>60</CurrentLine>
+        <CurrentLine>69</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

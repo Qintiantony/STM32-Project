@@ -111,6 +111,7 @@ Section Cross References
     usart.o(i.USART1_IRQHandler) refers to stm32f10x_usart.o(i.USART_GetITStatus) for USART_GetITStatus
     usart.o(i.USART1_IRQHandler) refers to stm32f10x_usart.o(i.USART_ReceiveData) for USART_ReceiveData
     usart.o(i.USART1_IRQHandler) refers to stm32f10x_usart.o(i.USART_SendData) for USART_SendData
+    usart.o(i.USART1_IRQHandler) refers to printfa.o(i.__0printf) for __2printf
     usart.o(i.USART1_IRQHandler) refers to stm32f10x_usart.o(i.USART_GetFlagStatus) for USART_GetFlagStatus
     usart.o(i.USART1_IRQHandler) refers to stm32f10x_usart.o(i.USART_ClearFlag) for USART_ClearFlag
     usart.o(i.USART1_Init) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
@@ -1242,35 +1243,35 @@ Image Symbol Table
     i.TIM_SetCompare1                        0x0800292a   Section        0  stm32f10x_tim.o(i.TIM_SetCompare1)
     i.TIM_TimeBaseInit                       0x08002930   Section        0  stm32f10x_tim.o(i.TIM_TimeBaseInit)
     i.USART1_IRQHandler                      0x080029d4   Section        0  usart.o(i.USART1_IRQHandler)
-    i.USART1_Init                            0x08002a10   Section        0  usart.o(i.USART1_Init)
-    i.USART_ClearFlag                        0x08002ac0   Section        0  stm32f10x_usart.o(i.USART_ClearFlag)
-    i.USART_Cmd                              0x08002ad2   Section        0  stm32f10x_usart.o(i.USART_Cmd)
-    i.USART_GetFlagStatus                    0x08002aea   Section        0  stm32f10x_usart.o(i.USART_GetFlagStatus)
-    i.USART_GetITStatus                      0x08002b04   Section        0  stm32f10x_usart.o(i.USART_GetITStatus)
-    i.USART_ITConfig                         0x08002b58   Section        0  stm32f10x_usart.o(i.USART_ITConfig)
-    i.USART_Init                             0x08002ba4   Section        0  stm32f10x_usart.o(i.USART_Init)
-    i.USART_ReceiveData                      0x08002c7c   Section        0  stm32f10x_usart.o(i.USART_ReceiveData)
-    i.USART_SendData                         0x08002c86   Section        0  stm32f10x_usart.o(i.USART_SendData)
-    i.__0printf                              0x08002c90   Section        0  printfa.o(i.__0printf)
-    i.__0sprintf                             0x08002cb0   Section        0  printfa.o(i.__0sprintf)
-    i.__scatterload_copy                     0x08002cd8   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08002ce6   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08002ce8   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._fp_digits                             0x08002cf8   Section        0  printfa.o(i._fp_digits)
-    _fp_digits                               0x08002cf9   Thumb Code   366  printfa.o(i._fp_digits)
-    i._printf_core                           0x08002e7c   Section        0  printfa.o(i._printf_core)
-    _printf_core                             0x08002e7d   Thumb Code  1744  printfa.o(i._printf_core)
-    i._printf_post_padding                   0x08003558   Section        0  printfa.o(i._printf_post_padding)
-    _printf_post_padding                     0x08003559   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x0800357c   Section        0  printfa.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x0800357d   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i._sputc                                 0x080035aa   Section        0  printfa.o(i._sputc)
-    _sputc                                   0x080035ab   Thumb Code    10  printfa.o(i._sputc)
-    i.delay_ms                               0x080035b4   Section        0  systick.o(i.delay_ms)
-    i.delay_us                               0x08003600   Section        0  systick.o(i.delay_us)
-    i.fputc                                  0x0800364c   Section        0  usart.o(i.fputc)
-    i.main                                   0x08003670   Section        0  main.o(i.main)
-    .constdata                               0x08003edc   Section     7142  tftlcd.o(.constdata)
+    i.USART1_Init                            0x08002a14   Section        0  usart.o(i.USART1_Init)
+    i.USART_ClearFlag                        0x08002ac4   Section        0  stm32f10x_usart.o(i.USART_ClearFlag)
+    i.USART_Cmd                              0x08002ad6   Section        0  stm32f10x_usart.o(i.USART_Cmd)
+    i.USART_GetFlagStatus                    0x08002aee   Section        0  stm32f10x_usart.o(i.USART_GetFlagStatus)
+    i.USART_GetITStatus                      0x08002b08   Section        0  stm32f10x_usart.o(i.USART_GetITStatus)
+    i.USART_ITConfig                         0x08002b5c   Section        0  stm32f10x_usart.o(i.USART_ITConfig)
+    i.USART_Init                             0x08002ba8   Section        0  stm32f10x_usart.o(i.USART_Init)
+    i.USART_ReceiveData                      0x08002c80   Section        0  stm32f10x_usart.o(i.USART_ReceiveData)
+    i.USART_SendData                         0x08002c8a   Section        0  stm32f10x_usart.o(i.USART_SendData)
+    i.__0printf                              0x08002c94   Section        0  printfa.o(i.__0printf)
+    i.__0sprintf                             0x08002cb4   Section        0  printfa.o(i.__0sprintf)
+    i.__scatterload_copy                     0x08002cdc   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08002cea   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08002cec   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._fp_digits                             0x08002cfc   Section        0  printfa.o(i._fp_digits)
+    _fp_digits                               0x08002cfd   Thumb Code   366  printfa.o(i._fp_digits)
+    i._printf_core                           0x08002e80   Section        0  printfa.o(i._printf_core)
+    _printf_core                             0x08002e81   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_post_padding                   0x0800355c   Section        0  printfa.o(i._printf_post_padding)
+    _printf_post_padding                     0x0800355d   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x08003580   Section        0  printfa.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x08003581   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._sputc                                 0x080035ae   Section        0  printfa.o(i._sputc)
+    _sputc                                   0x080035af   Thumb Code    10  printfa.o(i._sputc)
+    i.delay_ms                               0x080035b8   Section        0  systick.o(i.delay_ms)
+    i.delay_us                               0x08003604   Section        0  systick.o(i.delay_us)
+    i.fputc                                  0x08003650   Section        0  usart.o(i.fputc)
+    i.main                                   0x08003674   Section        0  main.o(i.main)
+    .constdata                               0x08003ee0   Section     7142  tftlcd.o(.constdata)
     .data                                    0x20000000   Section        4  systick.o(.data)
     fac_us                                   0x20000000   Data           1  systick.o(.data)
     fac_ms                                   0x20000002   Data           2  systick.o(.data)
@@ -1546,39 +1547,39 @@ Image Symbol Table
     TIM_OC1PreloadConfig                     0x08002919   Thumb Code    18  stm32f10x_tim.o(i.TIM_OC1PreloadConfig)
     TIM_SetCompare1                          0x0800292b   Thumb Code     4  stm32f10x_tim.o(i.TIM_SetCompare1)
     TIM_TimeBaseInit                         0x08002931   Thumb Code   122  stm32f10x_tim.o(i.TIM_TimeBaseInit)
-    USART1_IRQHandler                        0x080029d5   Thumb Code    54  usart.o(i.USART1_IRQHandler)
-    USART1_Init                              0x08002a11   Thumb Code   168  usart.o(i.USART1_Init)
-    USART_ClearFlag                          0x08002ac1   Thumb Code    18  stm32f10x_usart.o(i.USART_ClearFlag)
-    USART_Cmd                                0x08002ad3   Thumb Code    24  stm32f10x_usart.o(i.USART_Cmd)
-    USART_GetFlagStatus                      0x08002aeb   Thumb Code    26  stm32f10x_usart.o(i.USART_GetFlagStatus)
-    USART_GetITStatus                        0x08002b05   Thumb Code    84  stm32f10x_usart.o(i.USART_GetITStatus)
-    USART_ITConfig                           0x08002b59   Thumb Code    74  stm32f10x_usart.o(i.USART_ITConfig)
-    USART_Init                               0x08002ba5   Thumb Code   210  stm32f10x_usart.o(i.USART_Init)
-    USART_ReceiveData                        0x08002c7d   Thumb Code    10  stm32f10x_usart.o(i.USART_ReceiveData)
-    USART_SendData                           0x08002c87   Thumb Code     8  stm32f10x_usart.o(i.USART_SendData)
-    __0printf                                0x08002c91   Thumb Code    22  printfa.o(i.__0printf)
-    __1printf                                0x08002c91   Thumb Code     0  printfa.o(i.__0printf)
-    __2printf                                0x08002c91   Thumb Code     0  printfa.o(i.__0printf)
-    __c89printf                              0x08002c91   Thumb Code     0  printfa.o(i.__0printf)
-    printf                                   0x08002c91   Thumb Code     0  printfa.o(i.__0printf)
-    __0sprintf                               0x08002cb1   Thumb Code    34  printfa.o(i.__0sprintf)
-    __1sprintf                               0x08002cb1   Thumb Code     0  printfa.o(i.__0sprintf)
-    __2sprintf                               0x08002cb1   Thumb Code     0  printfa.o(i.__0sprintf)
-    __c89sprintf                             0x08002cb1   Thumb Code     0  printfa.o(i.__0sprintf)
-    sprintf                                  0x08002cb1   Thumb Code     0  printfa.o(i.__0sprintf)
-    __scatterload_copy                       0x08002cd9   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08002ce7   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08002ce9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    delay_ms                                 0x080035b5   Thumb Code    72  systick.o(i.delay_ms)
-    delay_us                                 0x08003601   Thumb Code    72  systick.o(i.delay_us)
-    fputc                                    0x0800364d   Thumb Code    32  usart.o(i.fputc)
-    main                                     0x08003671   Thumb Code  1948  main.o(i.main)
-    ascii_1206                               0x08003edc   Data        1140  tftlcd.o(.constdata)
-    ascii_1608                               0x08004350   Data        1520  tftlcd.o(.constdata)
-    ascii_2412                               0x08004940   Data        3420  tftlcd.o(.constdata)
-    CnChar32x29                              0x0800569c   Data        1062  tftlcd.o(.constdata)
-    Region$$Table$$Base                      0x08005ac4   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08005ae4   Number         0  anon$$obj.o(Region$$Table)
+    USART1_IRQHandler                        0x080029d5   Thumb Code    60  usart.o(i.USART1_IRQHandler)
+    USART1_Init                              0x08002a15   Thumb Code   168  usart.o(i.USART1_Init)
+    USART_ClearFlag                          0x08002ac5   Thumb Code    18  stm32f10x_usart.o(i.USART_ClearFlag)
+    USART_Cmd                                0x08002ad7   Thumb Code    24  stm32f10x_usart.o(i.USART_Cmd)
+    USART_GetFlagStatus                      0x08002aef   Thumb Code    26  stm32f10x_usart.o(i.USART_GetFlagStatus)
+    USART_GetITStatus                        0x08002b09   Thumb Code    84  stm32f10x_usart.o(i.USART_GetITStatus)
+    USART_ITConfig                           0x08002b5d   Thumb Code    74  stm32f10x_usart.o(i.USART_ITConfig)
+    USART_Init                               0x08002ba9   Thumb Code   210  stm32f10x_usart.o(i.USART_Init)
+    USART_ReceiveData                        0x08002c81   Thumb Code    10  stm32f10x_usart.o(i.USART_ReceiveData)
+    USART_SendData                           0x08002c8b   Thumb Code     8  stm32f10x_usart.o(i.USART_SendData)
+    __0printf                                0x08002c95   Thumb Code    22  printfa.o(i.__0printf)
+    __1printf                                0x08002c95   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x08002c95   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x08002c95   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x08002c95   Thumb Code     0  printfa.o(i.__0printf)
+    __0sprintf                               0x08002cb5   Thumb Code    34  printfa.o(i.__0sprintf)
+    __1sprintf                               0x08002cb5   Thumb Code     0  printfa.o(i.__0sprintf)
+    __2sprintf                               0x08002cb5   Thumb Code     0  printfa.o(i.__0sprintf)
+    __c89sprintf                             0x08002cb5   Thumb Code     0  printfa.o(i.__0sprintf)
+    sprintf                                  0x08002cb5   Thumb Code     0  printfa.o(i.__0sprintf)
+    __scatterload_copy                       0x08002cdd   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08002ceb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08002ced   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    delay_ms                                 0x080035b9   Thumb Code    72  systick.o(i.delay_ms)
+    delay_us                                 0x08003605   Thumb Code    72  systick.o(i.delay_us)
+    fputc                                    0x08003651   Thumb Code    32  usart.o(i.fputc)
+    main                                     0x08003675   Thumb Code  1948  main.o(i.main)
+    ascii_1206                               0x08003ee0   Data        1140  tftlcd.o(.constdata)
+    ascii_1608                               0x08004354   Data        1520  tftlcd.o(.constdata)
+    ascii_2412                               0x08004944   Data        3420  tftlcd.o(.constdata)
+    CnChar32x29                              0x080056a0   Data        1062  tftlcd.o(.constdata)
+    Region$$Table$$Base                      0x08005ac8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08005ae8   Number         0  anon$$obj.o(Region$$Table)
     FRONT_COLOR                              0x20000004   Data           2  tftlcd.o(.data)
     BACK_COLOR                               0x20000006   Data           2  tftlcd.o(.data)
     tftlcd_data                              0x20000008   Data           8  tftlcd.o(.data)
@@ -1600,9 +1601,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000145
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00005b20, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00005b24, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00005ae4, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00005ae8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1749,56 +1750,56 @@ Memory Map of the image
     0x0800292a   0x0800292a   0x00000004   Code   RO         1738    i.TIM_SetCompare1   stm32f10x_tim.o
     0x0800292e   0x0800292e   0x00000002   PAD
     0x08002930   0x08002930   0x000000a4   Code   RO         1748    i.TIM_TimeBaseInit  stm32f10x_tim.o
-    0x080029d4   0x080029d4   0x0000003c   Code   RO          410    i.USART1_IRQHandler  usart.o
-    0x08002a10   0x08002a10   0x000000b0   Code   RO          411    i.USART1_Init       usart.o
-    0x08002ac0   0x08002ac0   0x00000012   Code   RO         2221    i.USART_ClearFlag   stm32f10x_usart.o
-    0x08002ad2   0x08002ad2   0x00000018   Code   RO         2225    i.USART_Cmd         stm32f10x_usart.o
-    0x08002aea   0x08002aea   0x0000001a   Code   RO         2228    i.USART_GetFlagStatus  stm32f10x_usart.o
-    0x08002b04   0x08002b04   0x00000054   Code   RO         2229    i.USART_GetITStatus  stm32f10x_usart.o
-    0x08002b58   0x08002b58   0x0000004a   Code   RO         2231    i.USART_ITConfig    stm32f10x_usart.o
-    0x08002ba2   0x08002ba2   0x00000002   PAD
-    0x08002ba4   0x08002ba4   0x000000d8   Code   RO         2232    i.USART_Init        stm32f10x_usart.o
-    0x08002c7c   0x08002c7c   0x0000000a   Code   RO         2239    i.USART_ReceiveData  stm32f10x_usart.o
-    0x08002c86   0x08002c86   0x00000008   Code   RO         2242    i.USART_SendData    stm32f10x_usart.o
-    0x08002c8e   0x08002c8e   0x00000002   PAD
-    0x08002c90   0x08002c90   0x00000020   Code   RO         3227    i.__0printf         mc_w.l(printfa.o)
-    0x08002cb0   0x08002cb0   0x00000028   Code   RO         3229    i.__0sprintf        mc_w.l(printfa.o)
-    0x08002cd8   0x08002cd8   0x0000000e   Code   RO         3321    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002ce6   0x08002ce6   0x00000002   Code   RO         3322    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002ce8   0x08002ce8   0x0000000e   Code   RO         3323    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08002cf6   0x08002cf6   0x00000002   PAD
-    0x08002cf8   0x08002cf8   0x00000184   Code   RO         3234    i._fp_digits        mc_w.l(printfa.o)
-    0x08002e7c   0x08002e7c   0x000006dc   Code   RO         3235    i._printf_core      mc_w.l(printfa.o)
-    0x08003558   0x08003558   0x00000024   Code   RO         3236    i._printf_post_padding  mc_w.l(printfa.o)
-    0x0800357c   0x0800357c   0x0000002e   Code   RO         3237    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x080035aa   0x080035aa   0x0000000a   Code   RO         3239    i._sputc            mc_w.l(printfa.o)
-    0x080035b4   0x080035b4   0x0000004c   Code   RO          174    i.delay_ms          systick.o
-    0x08003600   0x08003600   0x0000004c   Code   RO          175    i.delay_us          systick.o
-    0x0800364c   0x0800364c   0x00000024   Code   RO          412    i.fputc             usart.o
-    0x08003670   0x08003670   0x0000086c   Code   RO            4    i.main              main.o
-    0x08003edc   0x08003edc   0x00001be6   Data   RO          483    .constdata          tftlcd.o
-    0x08005ac2   0x08005ac2   0x00000002   PAD
-    0x08005ac4   0x08005ac4   0x00000020   Data   RO         3319    Region$$Table       anon$$obj.o
+    0x080029d4   0x080029d4   0x00000040   Code   RO          410    i.USART1_IRQHandler  usart.o
+    0x08002a14   0x08002a14   0x000000b0   Code   RO          411    i.USART1_Init       usart.o
+    0x08002ac4   0x08002ac4   0x00000012   Code   RO         2221    i.USART_ClearFlag   stm32f10x_usart.o
+    0x08002ad6   0x08002ad6   0x00000018   Code   RO         2225    i.USART_Cmd         stm32f10x_usart.o
+    0x08002aee   0x08002aee   0x0000001a   Code   RO         2228    i.USART_GetFlagStatus  stm32f10x_usart.o
+    0x08002b08   0x08002b08   0x00000054   Code   RO         2229    i.USART_GetITStatus  stm32f10x_usart.o
+    0x08002b5c   0x08002b5c   0x0000004a   Code   RO         2231    i.USART_ITConfig    stm32f10x_usart.o
+    0x08002ba6   0x08002ba6   0x00000002   PAD
+    0x08002ba8   0x08002ba8   0x000000d8   Code   RO         2232    i.USART_Init        stm32f10x_usart.o
+    0x08002c80   0x08002c80   0x0000000a   Code   RO         2239    i.USART_ReceiveData  stm32f10x_usart.o
+    0x08002c8a   0x08002c8a   0x00000008   Code   RO         2242    i.USART_SendData    stm32f10x_usart.o
+    0x08002c92   0x08002c92   0x00000002   PAD
+    0x08002c94   0x08002c94   0x00000020   Code   RO         3227    i.__0printf         mc_w.l(printfa.o)
+    0x08002cb4   0x08002cb4   0x00000028   Code   RO         3229    i.__0sprintf        mc_w.l(printfa.o)
+    0x08002cdc   0x08002cdc   0x0000000e   Code   RO         3321    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002cea   0x08002cea   0x00000002   Code   RO         3322    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08002cec   0x08002cec   0x0000000e   Code   RO         3323    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002cfa   0x08002cfa   0x00000002   PAD
+    0x08002cfc   0x08002cfc   0x00000184   Code   RO         3234    i._fp_digits        mc_w.l(printfa.o)
+    0x08002e80   0x08002e80   0x000006dc   Code   RO         3235    i._printf_core      mc_w.l(printfa.o)
+    0x0800355c   0x0800355c   0x00000024   Code   RO         3236    i._printf_post_padding  mc_w.l(printfa.o)
+    0x08003580   0x08003580   0x0000002e   Code   RO         3237    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x080035ae   0x080035ae   0x0000000a   Code   RO         3239    i._sputc            mc_w.l(printfa.o)
+    0x080035b8   0x080035b8   0x0000004c   Code   RO          174    i.delay_ms          systick.o
+    0x08003604   0x08003604   0x0000004c   Code   RO          175    i.delay_us          systick.o
+    0x08003650   0x08003650   0x00000024   Code   RO          412    i.fputc             usart.o
+    0x08003674   0x08003674   0x0000086c   Code   RO            4    i.main              main.o
+    0x08003ee0   0x08003ee0   0x00001be6   Data   RO          483    .constdata          tftlcd.o
+    0x08005ac6   0x08005ac6   0x00000002   PAD
+    0x08005ac8   0x08005ac8   0x00000020   Data   RO         3319    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08005ae4, Size: 0x0000003c, Max: 0xffffffff, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x20000000   0x08005ae4   0x00000004   Data   RW          176    .data               systick.o
-    0x20000004   0x08005ae8   0x0000000c   Data   RW          484    .data               tftlcd.o
-    0x20000010   0x08005af4   0x0000000a   Data   RW          756    .data               hwjs.o
-    0x2000001a   0x08005afe   0x00000007   Data   RW          880    .data               sht30.o
-    0x20000021   0x08005b05   0x00000014   Data   RW         1481    .data               stm32f10x_rcc.o
-    0x20000035   0x08005b19   0x00000003   PAD
-    0x20000038   0x08005b1c   0x00000004   Data   RW         3299    .data               mc_w.l(stdout.o)
-
-
-    Execution Region ER_ZI (Exec base: 0x2000003c, Load base: 0x08005b20, Size: 0x00000404, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08005ae8, Size: 0x0000003c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2000003c   0x08005b20   0x00000004   PAD
+    0x20000000   0x08005ae8   0x00000004   Data   RW          176    .data               systick.o
+    0x20000004   0x08005aec   0x0000000c   Data   RW          484    .data               tftlcd.o
+    0x20000010   0x08005af8   0x0000000a   Data   RW          756    .data               hwjs.o
+    0x2000001a   0x08005b02   0x00000007   Data   RW          880    .data               sht30.o
+    0x20000021   0x08005b09   0x00000014   Data   RW         1481    .data               stm32f10x_rcc.o
+    0x20000035   0x08005b1d   0x00000003   PAD
+    0x20000038   0x08005b20   0x00000004   Data   RW         3299    .data               mc_w.l(stdout.o)
+
+
+    Execution Region ER_ZI (Exec base: 0x2000003c, Load base: 0x08005b24, Size: 0x00000404, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2000003c   0x08005b24   0x00000004   PAD
     0x20000040        -       0x00000400   Zero   RW         2458    STACK               startup_stm32f10x_hd.o
 
 
@@ -1836,10 +1837,10 @@ Image component sizes
        212         16          0          4          0       1677   systick.o
       1810         78       7142         12          0      10179   tftlcd.o
         40          6          0          0          0        434   time.o
-       272         18          0          0          0       3322   usart.o
+       276         16          0          0          0       3326   usart.o
 
     ----------------------------------------------------------------------
-     11308       1196       7480         56       1024     362668   Object Totals
+     11312       1194       7480         56       1024     362672   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         20          0          2          3          0          0   (incl. Padding)
 
@@ -1905,15 +1906,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15788       1308       7480         60       1028     358444   Grand Totals
-     15788       1308       7480         60       1028     358444   ELF Image Totals
-     15788       1308       7480         60          0          0   ROM Totals
+     15792       1306       7480         60       1028     358448   Grand Totals
+     15792       1306       7480         60       1028     358448   ELF Image Totals
+     15792       1306       7480         60          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                23268 (  22.72kB)
+    Total RO  Size (Code + RO Data)                23272 (  22.73kB)
     Total RW  Size (RW Data + ZI Data)              1088 (   1.06kB)
-    Total ROM Size (Code + RO Data + RW Data)      23328 (  22.78kB)
+    Total ROM Size (Code + RO Data + RW Data)      23332 (  22.79kB)
 
 ==============================================================================
 

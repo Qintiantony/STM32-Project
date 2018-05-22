@@ -66,6 +66,7 @@ void USART1_IRQHandler(void)
 	{
 		r=USART_ReceiveData(USART1);
 		USART_SendData(USART1,r);
+		printf(r);
 	}
 	while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);
 	USART_ClearFlag(USART1,USART_FLAG_TC);
