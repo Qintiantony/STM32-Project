@@ -6,6 +6,7 @@
 #include "dac.h"
 #include "adc.h"
 #include "laser.h"
+#include "usart.h"
 
 u32 hw_jsm;	  //定义一个32位数据变量，保存接收码
 u8  hw_jsbz;  //定义一个8位数据的变量，用于指示接收标志
@@ -179,15 +180,17 @@ void EXTI15_10_IRQHandler(void)	  //红外遥控外部中断
 			{
 				if(hw_jsm==IR_Key_1)
 				{
-					dac_value+=10;
-					DAC1_SetValue(dac_value);
+					//dac_value+=10;
+					//DAC1_SetValue(dac_value);
+					printf("11000001");
 					hw_jsbz=0;
 					hw_jsm=0;
 				}
 				else if(hw_jsm==IR_Key_2)
 				{
-					dac_value-=10;
-					DAC1_SetValue(dac_value);
+					//dac_value-=10;
+					//DAC1_SetValue(dac_value);
+					printf("11000000");
 					hw_jsbz=0;
 					hw_jsm=0;
 				}

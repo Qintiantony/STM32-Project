@@ -3,7 +3,7 @@
 #include "system.h"
 #include "stdio.h"
 
-extern u8 cmd[10];
+extern u8 rx_buffer[8];
 
 void USART1_Init(u32 bound);
 void USART1_IRQHandler(void);

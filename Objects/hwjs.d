@@ -30,3 +30,5 @@
 .\objects\hwjs.o: .\User\DAC\dac.h
 .\objects\hwjs.o: .\User\adc\adc.h
 .\objects\hwjs.o: .\User\laser\laser.h
+.\objects\hwjs.o: .\User\usart\usart.h
+.\objects\hwjs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

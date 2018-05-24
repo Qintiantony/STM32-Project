@@ -32,7 +32,7 @@ TIM4_CH1_PWM_Init(1000-1,720-1); //1kHz
 TIM_SetCompare1(TIM3,500);
 TIM_SetCompare1(TIM4,500);
 MOTOR_Init();
-USART1_Init(9600);
+USART1_Init(115200);
 	Hwjs_Init();
 DAC1_Init();
 //Laser_ScanInit();
@@ -67,6 +67,7 @@ Current_Status=0;
 FiberLock_Status=0;
 u8 Previous_Status=0;
 u8 Fan_State=0;
+u8 CoupleControl_Status=0;
 u8 DHT11_Counter=20;
 LCD_Clear(BLACK);
 double hum=0;
@@ -101,6 +102,7 @@ float target_vol=0;
 				LCD_ShowString(10,230,tftlcd_data.width,tftlcd_data.height,16,"4. Coupling Adjustment");
 				TIM4_CH1_PWM_State(0);
 				Fan_State=0;
+				CoupleControl_Status=0;
 				break;
 			}
 			case 1:
@@ -168,12 +170,16 @@ float target_vol=0;
 			}
 			case 4:
 			{
+				if(CoupleControl_Status==0)
+				{
 				LCD_ShowString(10,10,tftlcd_data.width,tftlcd_data.height,24,"Couple Adjustment");
+				CoupleControl_Status=1;
+				}
 				adc_value=Get_ADC_Value(ADC_Channel_3,50);
 				adc_vol=(float)adc_value*(3.3/4096);
 				sprintf(ADC_str,"Aval=%.3f",adc_vol);
 				LCD_ShowString(10,40,tftlcd_data.width,tftlcd_data.height,16,ADC_str);
-				printf(ADC_str);
+				//printf(ADC_str);
 				if(FiberLock_Status==1)
 				{
 					if(target_vol==0)
@@ -186,7 +192,7 @@ float target_vol=0;
 				else target_vol=0;
 				sprintf(ADC_str,"Dval=%d",dac_value);
 				LCD_ShowString(10,70,tftlcd_data.width,tftlcd_data.height,16,ADC_str);
-				printf(ADC_str);
+				//printf(ADC_str);
 				break;
 			}
 			

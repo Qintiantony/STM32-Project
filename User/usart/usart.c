@@ -2,7 +2,7 @@
 #include "system.h"
 #include "usart.h"
 
-u8 cmd[10];
+u8 rx_buffer[8];
 
 void USART1_Init(u32 bound)
 {
@@ -66,11 +66,13 @@ void USART1_IRQHandler(void)
 	{
 		r=USART_ReceiveData(USART1);
 		USART_SendData(USART1,r);
-		printf(r);
+		//USART_SendData(USART1,1);
+		//printf(r);
 	}
 	while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);
 	USART_ClearFlag(USART1,USART_FLAG_TC);
 }
+
 
 int fputc(int ch,FILE *p)
 {
